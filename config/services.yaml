@@ -27,5 +27,5 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-#    BoShurik\TelegramBotBundle\Guard\UserLoaderInterface: '@App\Security\UserProvider'
-#    BoShurik\TelegramBotBundle\Guard\UserFactoryInterface: '@App\Security\UserProvider'
+    BoShurik\TelegramBotBundle\Guard\UserLoaderInterface: '@App\Security\UserProvider'
+    BoShurik\TelegramBotBundle\Guard\UserFactoryInterface: '@App\Security\UserProvider'

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eada9f2694df6f9b07e2fcae555cba16",
+    "content-hash": "49c3226847bdcec3fc92885fe971fa21",
     "packages": [
         {
             "name": "boshurik/telegram-bot-bundle",
-            "version": "4.0.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BoShurik/TelegramBotBundle.git",
-                "reference": "55b34d3717523ac1ae9bb921790d719ce0408d9e"
+                "reference": "8913a74bf8a1e3a2675a663a18160c95c68409a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BoShurik/TelegramBotBundle/zipball/55b34d3717523ac1ae9bb921790d719ce0408d9e",
-                "reference": "55b34d3717523ac1ae9bb921790d719ce0408d9e",
+                "url": "https://api.github.com/repos/BoShurik/TelegramBotBundle/zipball/8913a74bf8a1e3a2675a663a18160c95c68409a8",
+                "reference": "8913a74bf8a1e3a2675a663a18160c95c68409a8",
                 "shasum": ""
             },
             "require": {
@@ -30,7 +30,13 @@
                 "telegram-bot/api": "^2.3.10"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.4"
+                "matthiasnoback/symfony-dependency-injection-test": "^4.1",
+                "php-mock/php-mock-phpunit": "^2.6",
+                "phpunit/phpunit": "^8.0",
+                "symfony/security-guard": "^4.4 || ^5.0"
+            },
+            "suggest": {
+                "symfony/security-guard": "Required to implement user authentication through Telegram"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -58,7 +64,7 @@
                 }
             ],
             "description": "Telegram bot bundle",
-            "time": "2020-01-09T15:12:22+00:00"
+            "time": "2020-04-29T17:28:13+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -8410,7 +8416,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "boshurik/telegram-bot-bundle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

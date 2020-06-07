@@ -19,17 +19,34 @@ class UserProvider implements UserLoaderInterface, UserFactoryInterface
 
     public function loadByTelegramId(string $id): ?UserInterface
     {
-        return $this->entityManager->getRepository(User::class)->findOneBy(['telegram.id' => $id]);
+        return $this->entityManager->getRepository(User::class)
+            ->findOneBy(['telegram.id' => $id]);
     }
 
+    //     $data['id'],
+    //     $data['first_name']
+    //     $data['last_name'],
+    //     $data['username'] ?? null,
+    //     $data['photo_url'] ?? null
     public function createFromTelegram(array $data): UserInterface
     {
-        $user = new User(
-            $data['id'],
-            $data['first_name'].' '.$data['last_name'],
-            $data['username'] ?? null,
-            $data['photo_url'] ?? null
-        );
+        $userName = $data['username'] ?? null;
+
+        if (!$userName) {
+            throw new \Exception('Telegram user must have a username');
+        }
+
+        $existingUser = $this->entityManager->getRepository(User::class)
+            ->findOneBy(['username.id' => $userName]);
+
+        if ($existingUser) {
+            $existingUser->setTelegramId($data['id']);
+        } else {
+            $user = new User();
+
+            $user->setTelegramId($data['id'])
+                ->setUsername($userName);
+        }
 
         $this->entityManager->persist($user);
         $this->entityManager->flush();

@@ -20,7 +20,7 @@ class UserProvider implements UserLoaderInterface, UserFactoryInterface
     public function loadByTelegramId(string $id): ?UserInterface
     {
         return $this->entityManager->getRepository(User::class)
-            ->findOneBy(['telegram.id' => $id]);
+            ->findOneBy(['telegram_id' => $id]);
     }
 
     //     $data['id'],
@@ -37,7 +37,7 @@ class UserProvider implements UserLoaderInterface, UserFactoryInterface
         }
 
         $existingUser = $this->entityManager->getRepository(User::class)
-            ->findOneBy(['username.id' => $userName]);
+            ->findOneBy(['username' => $userName]);
 
         if ($existingUser) {
             $existingUser->setTelegramId($data['id']);

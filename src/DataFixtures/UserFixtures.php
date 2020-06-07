@@ -12,7 +12,7 @@ class UserFixtures extends Fixture
     {
         $user = new User();
 
-        $user->setUsername('admin')
+        $user->setUsername('nikp3h')
             ->setRoles(['ROLE_ADMIN'])
             ->setTelegramId(0)
             ->setIsVerified(true);

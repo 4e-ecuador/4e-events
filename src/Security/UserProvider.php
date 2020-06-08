@@ -41,6 +41,7 @@ class UserProvider implements UserLoaderInterface, UserFactoryInterface
 
         if ($existingUser) {
             $existingUser->setTelegramId($data['id']);
+            $user = $existingUser;
         } else {
             $user = new User();
 

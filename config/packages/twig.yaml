@@ -1,2 +1,4 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    globals:
+        telegram_route_secret: '%env(TELEGRAM_ROUTE_SECRET)%'

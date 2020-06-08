@@ -3,5 +3,5 @@ boshurik_telegram_bot:
         token: "%env(TELEGRAM_BOT_TOKEN)%"
     guard:
         default_target_route: default  # redirect after login success
-        guard_route: '/tg_login_web'        # dafaults to path /_telegram/<a_secret_token>/login
-#        login_route: your_login_route       # optional, if login fails user will be redirected there
+        guard_route: _telegram_login        # dafaults to path /_telegram/<a_secret_token>/login
+        login_route: default       # optional, if login fails user will be redirected there

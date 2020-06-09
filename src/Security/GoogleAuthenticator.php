@@ -77,7 +77,8 @@ class GoogleAuthenticator extends SocialAuthenticator
 
         if (!$user) {
             $user = new User();
-            $user->setEmail($email);
+            $user->setEmail($email)
+                ->setUsername($email);
 
             $this->em->persist($user);
             $this->em->flush();
@@ -104,7 +105,7 @@ class GoogleAuthenticator extends SocialAuthenticator
         return new RedirectResponse($this->urlGenerator->generate('default'));
     }
 
-    public function onAuthenticationFailure(Request $request, AuthenticationException $exception):Response
+    public function onAuthenticationFailure(Request $request, AuthenticationException $exception): Response
     {
         $message = strtr($exception->getMessageKey(), $exception->getMessageData());
 

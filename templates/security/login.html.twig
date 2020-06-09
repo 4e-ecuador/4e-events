@@ -26,16 +26,20 @@
                 </button>
             </form>
         {% else %}
-
-            <script async src="https://telegram.org/js/telegram-widget.js?9" data-telegram-login="ec_enl_events_bot"
-                    data-size="medium"
-                    data-auth-url="https://events-4e.herokuapp.com/_telegram/{{ telegram_route_secret }}/login"
-                    data-request-access="write"></script>
-
-            <a href="{{ path('connect_google_start') }}">
-                <img src="{{ asset('build/img/login-buttons/btn_google_signin_dark_normal_web.png') }}"
-                     alt="{{ 'Google Login'|trans }}">
-            </a>
+            <ul>
+                <li>
+                    <script async src="https://telegram.org/js/telegram-widget.js?9"
+                            data-telegram-login="ec_enl_events_bot" data-size="medium"
+                            data-auth-url="https://events-4e.herokuapp.com/_telegram/{{ telegram_route_secret }}/login"
+                            data-request-access="write"></script>
+                </li>
+                <li>
+                    <a href="{{ path('connect_google_start') }}">
+                        <img src="{{ asset('build/img/login-buttons/btn_google_signin_dark_normal_web.png') }}"
+                             alt="{{ 'Google Login'|trans }}">
+                    </a>
+                </li>
+            </ul>
         {% endif %}
     {% endif %}
 {% endblock %}

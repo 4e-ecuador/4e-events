@@ -5,9 +5,17 @@
 {% block body %}
 
     {% if app.user %}
-        <h1>Hello {{ app.user.username }}</h1>
+        <h2>Hello
+            {% if is_granted('ROLE_ADMIN') %}
+                Admin
+            {% elseif is_granted('ROLE_AGENT') %}
+                Agent
+            {% else %}
+                Anonymous
+            {% endif %}
+            {{ app.user.username }}</h2>
     {% else %}
-        <h3>Welcome...</h3>
+        <h2>Welcome...</h2>
     {% endif %}
 
 {% endblock %}

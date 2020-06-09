@@ -14,7 +14,7 @@ class UserType extends AbstractType
     {
         $builder
             ->add('username')
-            // ->add('roles')
+            ->add('email')
             ->add(
                 'roles',
                 ChoiceType::class,
@@ -28,7 +28,7 @@ class UserType extends AbstractType
                     'multiple' => true,
                 ]
             )
-            ->add('telegram_id')
+            // ->add('telegram_id')
             ->add('is_verified')
         ;
     }

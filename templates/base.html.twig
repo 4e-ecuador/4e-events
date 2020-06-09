@@ -7,20 +7,18 @@
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
+
 <body>
-<a href="{{ path('default') }}">Home</a>
 
-{% if app.user %}
-    <a href="{{ path('app_logout') }}">Logout</a>
-{% else %}
-    <a href="{{ path('app_login') }}">Login</a>
-{% endif %}
+{% include '_menu.html.twig' %}
 
-<a href="{{ path('user_index') }}">Users</a>
+<main role="main" class="container-fluid">
+    {% block body %}{% endblock %}
+</main><!-- /.container -->
 
-{% block body %}{% endblock %}
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
 {% endblock %}
+
 </body>
 </html>

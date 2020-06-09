@@ -31,6 +31,10 @@
                     data-size="medium"
                     data-auth-url="https://events-4e.herokuapp.com/_telegram/{{ telegram_route_secret }}/login"
                     data-request-access="write"></script>
+
+            <a href="{{ path('connect_google_start') }}">
+                Google
+            </a>
         {% endif %}
     {% endif %}
 {% endblock %}

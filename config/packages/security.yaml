@@ -18,6 +18,7 @@ security:
                 authenticators:
                     - App\Security\LoginFormAuthenticator
                     - BoShurik\TelegramBotBundle\Guard\TelegramAuthenticator
+                    - App\Security\GoogleAuthenticator
                 entry_point: App\Security\LoginFormAuthenticator
             logout:
                 path: app_logout

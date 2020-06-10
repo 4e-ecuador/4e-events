@@ -20,12 +20,12 @@
             </li>
             {% endif %}
         </ul>
-        <div class="form-inline my-2 my-lg-0">
-            {% if app.user %}
-                <a class="btn-outline-success btn-sm" href="{{ path('app_logout') }}">Logout</a>
-            {% else %}
-                <a class="btn-success btn-sm" href="{{ path('app_login') }}">Login</a>
-            {% endif %}
-        </div>
+    </div>
+    <div class="form-inline my-2 my-lg-0">
+        {% if app.user %}
+            <a class="btn-outline-success btn-sm" href="{{ path('app_logout') }}">Logout</a>
+        {% else %}
+            <a class="btn-success btn-sm" href="{{ path('app_login') }}">Login</a>
+        {% endif %}
     </div>
 </nav>
